@@ -1,0 +1,28 @@
+[2025-10-18T03:07:11.601+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_weather manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T03:07:11.607+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_weather manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T03:07:11.607+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 5
+[2025-10-18T03:07:11.614+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): data_collection.fetch_weather> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T03:07:11.617+0000] {standard_task_runner.py:57} INFO - Started process 62 to run task
+[2025-10-18T03:07:11.619+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'data_collection.fetch_weather', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmp_s6rn6pp']
+[2025-10-18T03:07:11.619+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask data_collection.fetch_weather
+[2025-10-18T03:07:11.639+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.data_collection.fetch_weather manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T03:07:11.669+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='data_collection.fetch_weather' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T03:07:11.872+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T03:07:11.873+0000] {agricultural_sri_pipeline.py:129} INFO - 🌦️ Fetching weather data for 2025
+[2025-10-18T03:07:11.873+0000] {weather_data_collector.py:169} INFO - 🌤️  Fetching weather data for 2025
+[2025-10-18T03:07:11.873+0000] {weather_data_collector.py:176} ERROR - ❌ No Visual Crossing API key provided
+[2025-10-18T03:07:11.879+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/agricultural_sri_pipeline.py", line 137, in fetch_weather_data
+    context['ti'].xcom_push(key='weather_states', value=result['states'])
+KeyError: 'states'
+[2025-10-18T03:07:11.883+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=agricultural_sri_annual_report, task_id=data_collection.fetch_weather, execution_date=20251018T023124, start_date=20251018T030711, end_date=20251018T030711
+[2025-10-18T03:07:11.887+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 11 for task data_collection.fetch_weather ('states'; 62)
+[2025-10-18T03:07:11.925+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-10-18T03:07:11.937+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

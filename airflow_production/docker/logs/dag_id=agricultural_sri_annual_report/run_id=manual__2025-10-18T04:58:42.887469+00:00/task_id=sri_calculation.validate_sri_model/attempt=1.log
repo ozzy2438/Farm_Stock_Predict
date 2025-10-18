@@ -1,0 +1,22 @@
+[2025-10-18T05:28:32.917+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.sri_calculation.validate_sri_model manual__2025-10-18T04:58:42.887469+00:00 [queued]>
+[2025-10-18T05:28:32.922+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.sri_calculation.validate_sri_model manual__2025-10-18T04:58:42.887469+00:00 [queued]>
+[2025-10-18T05:28:32.923+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T05:28:32.931+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): sri_calculation.validate_sri_model> on 2025-10-18 04:58:42.887469+00:00
+[2025-10-18T05:28:32.936+0000] {standard_task_runner.py:57} INFO - Started process 599 to run task
+[2025-10-18T05:28:32.939+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'sri_calculation.validate_sri_model', 'manual__2025-10-18T04:58:42.887469+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmpju_w18u_']
+[2025-10-18T05:28:32.939+0000] {standard_task_runner.py:85} INFO - Job 68: Subtask sri_calculation.validate_sri_model
+[2025-10-18T05:28:32.960+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.sri_calculation.validate_sri_model manual__2025-10-18T04:58:42.887469+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T05:28:32.996+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='sri_calculation.validate_sri_model' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T04:58:42.887469+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T04:58:42.887469+00:00'
+[2025-10-18T05:28:33.207+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T05:28:33.208+0000] {agricultural_sri_pipeline.py:345} INFO - 🔍 Validating SRI model output for 2025
+[2025-10-18T05:28:33.213+0000] {sri_validator.py:31} INFO - 🔍 Validating SRI results...
+[2025-10-18T05:28:33.217+0000] {sri_validator.py:137} INFO -   ✅ SRI validation passed
+[2025-10-18T05:28:33.217+0000] {sri_validator.py:138} INFO -      Average SRI: 23.7, Range: 6.2-41.2
+[2025-10-18T05:28:33.217+0000] {sri_validator.py:139} INFO -      1 warnings
+[2025-10-18T05:28:33.217+0000] {agricultural_sri_pipeline.py:357} INFO - ✅ SRI validation passed
+[2025-10-18T05:28:33.227+0000] {python.py:194} INFO - Done. Returned value was: {'passed': True, 'errors': [], 'warnings': ['Low state coverage: 39 states (expected ~50)'], 'stats': {'total_records': 380, 'avg_sri': 23.749738036688626, 'median_sri': 22.927360483091405, 'std_sri': 6.963434477096994, 'min_sri': 6.25, 'max_sri': 41.25, 'risk_categories': {'Low': 227, 'Moderate': 153}, 'states': 39, 'commodities': 3}}
+[2025-10-18T05:28:33.236+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=sri_calculation.validate_sri_model, execution_date=20251018T045842, start_date=20251018T052832, end_date=20251018T052833
+[2025-10-18T05:28:33.281+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T05:28:33.293+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

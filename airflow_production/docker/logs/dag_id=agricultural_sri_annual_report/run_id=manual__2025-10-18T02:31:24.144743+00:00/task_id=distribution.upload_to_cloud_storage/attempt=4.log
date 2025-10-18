@@ -1,0 +1,19 @@
+[2025-10-18T04:57:21.409+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.upload_to_cloud_storage manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:57:21.415+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.upload_to_cloud_storage manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:57:21.415+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 6
+[2025-10-18T04:57:21.423+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): distribution.upload_to_cloud_storage> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T04:57:21.426+0000] {standard_task_runner.py:57} INFO - Started process 137 to run task
+[2025-10-18T04:57:21.428+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'distribution.upload_to_cloud_storage', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '54', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmp7c1qqauv']
+[2025-10-18T04:57:21.429+0000] {standard_task_runner.py:85} INFO - Job 54: Subtask distribution.upload_to_cloud_storage
+[2025-10-18T04:57:21.449+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.distribution.upload_to_cloud_storage manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T04:57:21.477+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='distribution.upload_to_cloud_storage' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T04:57:21.505+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T04:57:21.505+0000] {agricultural_sri_pipeline.py:537} INFO - ☁️ Uploading reports to cloud storage for 2025
+[2025-10-18T04:57:21.505+0000] {agricultural_sri_pipeline.py:544} WARNING - ⚠️ AWS credentials not configured. Skipping cloud upload.
+[2025-10-18T04:57:21.514+0000] {agricultural_sri_pipeline.py:562} INFO - ✅ Cloud upload completed: AWS credentials not configured
+[2025-10-18T04:57:21.515+0000] {python.py:194} INFO - Done. Returned value was: {'success': False, 'message': 'AWS credentials not configured', 'public_url': 'N/A', 's3_paths': []}
+[2025-10-18T04:57:21.522+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=distribution.upload_to_cloud_storage, execution_date=20251018T023124, start_date=20251018T045721, end_date=20251018T045721
+[2025-10-18T04:57:21.568+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T04:57:21.579+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

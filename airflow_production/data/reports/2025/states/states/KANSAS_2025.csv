@@ -1,0 +1,14 @@
+year,state_name,commodity,SRI,risk_category,yield_per_acre,recommendation,yield_risk,weather_risk,drought_risk,economic_risk
+2025,KANSAS - SUMMARY,ALL,30.41364442635242,Avg: 30.4,,,,,,
+2025,KANSAS,CORN,33.40422490384768,Moderate,136.0,"Monitor closely, consider +5% stockpile",77.58349972527907,4.0,0.0,35.0
+2025,KANSAS,CORN,33.40422490384768,Moderate,136.0,"Monitor closely, consider +5% stockpile",77.58349972527907,4.0,0.0,35.0
+2025,KANSAS,CORN,32.67328087449258,Moderate,139.0,"Monitor closely, consider +5% stockpile",75.49508821283595,4.0,0.0,35.0
+2025,KANSAS,SOYBEANS,32.089515681014255,Moderate,36.0,"Monitor closely, consider +5% stockpile",73.82718766004074,4.0,0.0,35.0
+2025,KANSAS,SOYBEANS,29.984473521686677,Moderate,39.0,"Monitor closely, consider +5% stockpile",67.81278149053335,4.0,0.0,35.0
+2025,KANSAS,SOYBEANS,29.984473521686677,Moderate,39.0,"Monitor closely, consider +5% stockpile",67.81278149053335,4.0,0.0,35.0
+2025,KANSAS,WHEAT,29.118444394397624,Moderate,50.0,"Monitor closely, consider +5% stockpile",65.33841255542178,4.0,0.0,35.0
+2025,KANSAS,WHEAT,29.118444394397624,Moderate,50.0,"Monitor closely, consider +5% stockpile",65.33841255542178,4.0,0.0,35.0
+2025,KANSAS,WHEAT,28.79666273021459,Moderate,51.0,"Monitor closely, consider +5% stockpile",64.41903637204169,4.0,0.0,35.0
+2025,KANSAS,WHEAT,28.79666273021459,Moderate,51.0,"Monitor closely, consider +5% stockpile",64.41903637204169,4.0,0.0,35.0
+2025,KANSAS,WHEAT,28.79666273021459,Moderate,51.0,"Monitor closely, consider +5% stockpile",64.41903637204169,4.0,0.0,35.0
+2025,KANSAS,WHEAT,28.79666273021459,Moderate,51.0,"Monitor closely, consider +5% stockpile",64.41903637204169,4.0,0.0,35.0

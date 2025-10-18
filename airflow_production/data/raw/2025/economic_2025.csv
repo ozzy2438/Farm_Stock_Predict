@@ -1,0 +1,4 @@
+commodity,year,production,total_supply,ending_stocks,stocks_to_use_ratio,price_index,supply_risk_score
+CORN,2025,,,,,100,50
+SOYBEANS,2025,,,,,100,50
+WHEAT,2025,,,,,100,50

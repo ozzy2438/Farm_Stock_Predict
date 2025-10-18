@@ -1,0 +1,18 @@
+[2025-10-18T05:29:49.896+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.archive_and_cleanup manual__2025-10-18T05:15:35.676026+00:00 [queued]>
+[2025-10-18T05:29:49.901+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.archive_and_cleanup manual__2025-10-18T05:15:35.676026+00:00 [queued]>
+[2025-10-18T05:29:49.901+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T05:29:49.906+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): archive_and_cleanup> on 2025-10-18 05:15:35.676026+00:00
+[2025-10-18T05:29:49.908+0000] {standard_task_runner.py:57} INFO - Started process 746 to run task
+[2025-10-18T05:29:49.910+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'archive_and_cleanup', 'manual__2025-10-18T05:15:35.676026+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmp6a2j745m']
+[2025-10-18T05:29:49.910+0000] {standard_task_runner.py:85} INFO - Job 94: Subtask archive_and_cleanup
+[2025-10-18T05:29:49.930+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.archive_and_cleanup manual__2025-10-18T05:15:35.676026+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T05:29:49.960+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='archive_and_cleanup' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T05:15:35.676026+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T05:15:35.676026+00:00'
+[2025-10-18T05:29:49.960+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T05:29:49.960+0000] {agricultural_sri_pipeline.py:678} INFO - 🗄️ Archiving data for 2025
+[2025-10-18T05:29:49.962+0000] {agricultural_sri_pipeline.py:687} INFO - ✅ Archived 2025 data to /opt/***/data/historical/2025
+[2025-10-18T05:29:49.962+0000] {python.py:194} INFO - Done. Returned value was: {'archived': True, 'year': 2025}
+[2025-10-18T05:29:49.970+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=archive_and_cleanup, execution_date=20251018T051535, start_date=20251018T052949, end_date=20251018T052949
+[2025-10-18T05:29:50.008+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T05:29:50.015+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

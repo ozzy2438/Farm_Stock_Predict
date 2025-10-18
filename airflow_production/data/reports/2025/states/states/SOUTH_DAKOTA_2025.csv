@@ -1,0 +1,17 @@
+year,state_name,commodity,SRI,risk_category,yield_per_acre,recommendation,yield_risk,weather_risk,drought_risk,economic_risk
+2025,SOUTH DAKOTA - SUMMARY,ALL,27.831764028440354,Avg: 27.8,,,,,,
+2025,SOUTH DAKOTA,WHEAT,30.40557105112975,Moderate,46.0,"Monitor closely, consider +5% stockpile",69.01591728894215,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,30.40557105112975,Moderate,46.0,"Monitor closely, consider +5% stockpile",69.01591728894215,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,30.08378938694672,Moderate,47.0,"Monitor closely, consider +5% stockpile",68.09654110556205,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,30.08378938694672,Moderate,47.0,"Monitor closely, consider +5% stockpile",68.09654110556205,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,29.762007722763684,Moderate,48.0,"Monitor closely, consider +5% stockpile",67.17716492218196,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,29.440226058580656,Moderate,49.0,"Monitor closely, consider +5% stockpile",66.25778873880188,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,29.118444394397624,Moderate,50.0,"Monitor closely, consider +5% stockpile",65.33841255542178,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,28.957553562306103,Moderate,50.5,"Monitor closely, consider +5% stockpile",64.87872446373173,4.0,0.0,35.0
+2025,SOUTH DAKOTA,WHEAT,28.79666273021459,Moderate,51.0,"Monitor closely, consider +5% stockpile",64.41903637204169,4.0,0.0,35.0
+2025,SOUTH DAKOTA,CORN,25.85113660051176,Moderate,167.0,"Monitor closely, consider +5% stockpile",56.0032474300336,4.0,0.0,35.0
+2025,SOUTH DAKOTA,CORN,25.85113660051176,Moderate,167.0,"Monitor closely, consider +5% stockpile",56.0032474300336,4.0,0.0,35.0
+2025,SOUTH DAKOTA,CORN,25.607488590726728,Moderate,168.0,"Monitor closely, consider +5% stockpile",55.30711025921923,4.0,0.0,35.0
+2025,SOUTH DAKOTA,SOYBEANS,24.371027763479784,Low,47.0,Normal inventory,51.77436503851367,4.0,0.0,35.0
+2025,SOUTH DAKOTA,SOYBEANS,24.371027763479784,Low,47.0,Normal inventory,51.77436503851367,4.0,0.0,35.0
+2025,SOUTH DAKOTA,SOYBEANS,24.371027763479784,Low,47.0,Normal inventory,51.77436503851367,4.0,0.0,35.0

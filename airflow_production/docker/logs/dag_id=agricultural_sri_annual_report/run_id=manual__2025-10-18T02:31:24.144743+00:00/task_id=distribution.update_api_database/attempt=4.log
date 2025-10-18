@@ -1,0 +1,24 @@
+[2025-10-18T04:57:21.407+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:57:21.413+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:57:21.413+0000] {taskinstance.py:1361} INFO - Starting attempt 4 of 6
+[2025-10-18T04:57:21.419+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): distribution.update_api_database> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T04:57:21.422+0000] {standard_task_runner.py:57} INFO - Started process 136 to run task
+[2025-10-18T04:57:21.424+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'distribution.update_api_database', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '53', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmpyq9jx2yc']
+[2025-10-18T04:57:21.425+0000] {standard_task_runner.py:85} INFO - Job 53: Subtask distribution.update_api_database
+[2025-10-18T04:57:21.448+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T04:57:21.477+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='distribution.update_api_database' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='4' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T04:57:21.677+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T04:57:21.678+0000] {agricultural_sri_pipeline.py:572} INFO - 🗄️ Updating API database for 2025
+[2025-10-18T04:57:21.682+0000] {api_updater.py:31} INFO - 🔄 Updating API data...
+[2025-10-18T04:57:21.684+0000] {api_updater.py:42} INFO -   ✓ Copied SRI results to API directory
+[2025-10-18T04:57:21.687+0000] {api_updater.py:65} INFO -   ✓ Created metadata file
+[2025-10-18T04:57:21.687+0000] {api_updater.py:80} INFO -   ✓ Created 'latest' symlink to 2025
+[2025-10-18T04:57:21.687+0000] {api_updater.py:86} INFO - ✅ API data updated successfully
+[2025-10-18T04:57:21.687+0000] {api_updater.py:87} INFO -    API can now serve data at: /sri/latest and /sri/2025
+[2025-10-18T04:57:21.688+0000] {agricultural_sri_pipeline.py:583} INFO - ✅ API database updated with 380 records
+[2025-10-18T04:57:21.688+0000] {python.py:194} INFO - Done. Returned value was: {'success': True, 'api_data_dir': '/opt/***/data/api/2025', 'year': 2025, 'records': 380, 'metadata': {'year': 2025, 'total_records': 380, 'states': 39, 'commodities': 3, 'avg_sri': 23.749738036688626, 'high_risk_count': 0, 'data_file': 'sri_results.csv', 'updated': '2025-10-18T04:57:21.686493'}}
+[2025-10-18T04:57:21.696+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=distribution.update_api_database, execution_date=20251018T023124, start_date=20251018T045721, end_date=20251018T045721
+[2025-10-18T04:57:21.737+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T04:57:21.748+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

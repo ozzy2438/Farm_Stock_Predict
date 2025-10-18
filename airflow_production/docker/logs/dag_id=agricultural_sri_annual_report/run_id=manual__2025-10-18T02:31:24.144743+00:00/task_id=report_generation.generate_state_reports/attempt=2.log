@@ -1,0 +1,22 @@
+[2025-10-18T04:26:12.835+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.report_generation.generate_state_reports manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:26:12.843+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.report_generation.generate_state_reports manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:26:12.844+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 4
+[2025-10-18T04:26:12.852+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): report_generation.generate_state_reports> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T04:26:12.855+0000] {standard_task_runner.py:57} INFO - Started process 1066 to run task
+[2025-10-18T04:26:12.859+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'report_generation.generate_state_reports', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmphr_3f6jq']
+[2025-10-18T04:26:12.860+0000] {standard_task_runner.py:85} INFO - Job 37: Subtask report_generation.generate_state_reports
+[2025-10-18T04:26:12.888+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.report_generation.generate_state_reports manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T04:26:12.922+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='report_generation.generate_state_reports' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T04:26:13.189+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/agricultural_sri_pipeline.py", line 470, in generate_state_reports
+    from state_report_generator import generate_all_state_reports
+ImportError: cannot import name 'generate_all_state_reports' from 'state_report_generator' (/opt/airflow/dags/scripts/reporters/state_report_generator.py)
+[2025-10-18T04:26:13.193+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=agricultural_sri_annual_report, task_id=report_generation.generate_state_reports, execution_date=20251018T023124, start_date=20251018T042612, end_date=20251018T042613
+[2025-10-18T04:26:13.197+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 37 for task report_generation.generate_state_reports (cannot import name 'generate_all_state_reports' from 'state_report_generator' (/opt/airflow/dags/scripts/reporters/state_report_generator.py); 1066)
+[2025-10-18T04:26:13.214+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-10-18T04:26:13.224+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

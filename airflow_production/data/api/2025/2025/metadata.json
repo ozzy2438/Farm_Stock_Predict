@@ -1,0 +1,10 @@
+{
+  "year": 2025,
+  "total_records": 380,
+  "states": 39,
+  "commodities": 3,
+  "avg_sri": 23.749738036688626,
+  "high_risk_count": 0,
+  "data_file": "sri_results.csv",
+  "updated": "2025-10-18T05:30:49.665974"
+}

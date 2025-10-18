@@ -1,0 +1,178 @@
+[2025-10-18T03:02:16.267+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_drought manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T03:02:16.272+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_drought manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T03:02:16.272+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 3
+[2025-10-18T03:02:16.277+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): data_collection.fetch_drought> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T03:02:16.280+0000] {standard_task_runner.py:57} INFO - Started process 709 to run task
+[2025-10-18T03:02:16.282+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'data_collection.fetch_drought', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmp7v104_8f']
+[2025-10-18T03:02:16.282+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask data_collection.fetch_drought
+[2025-10-18T03:02:16.305+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.data_collection.fetch_drought manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T03:02:16.336+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='data_collection.fetch_drought' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T03:02:16.534+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T03:02:16.534+0000] {agricultural_sri_pipeline.py:150} INFO - 🌵 Fetching drought data for 2025
+[2025-10-18T03:02:16.534+0000] {drought_data_collector.py:137} INFO - 🌵 Fetching drought data for 2025
+[2025-10-18T03:02:16.534+0000] {drought_data_collector.py:148} INFO -   Fetching Alabama...
+[2025-10-18T03:02:17.580+0000] {drought_data_collector.py:122} ERROR -   ❌ Alabama: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:17.586+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Alabama: No data
+[2025-10-18T03:02:17.587+0000] {drought_data_collector.py:148} INFO -   Fetching Alaska...
+[2025-10-18T03:02:18.711+0000] {drought_data_collector.py:122} ERROR -   ❌ Alaska: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:18.715+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Alaska: No data
+[2025-10-18T03:02:18.718+0000] {drought_data_collector.py:148} INFO -   Fetching Arizona...
+[2025-10-18T03:02:19.737+0000] {drought_data_collector.py:122} ERROR -   ❌ Arizona: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:19.742+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Arizona: No data
+[2025-10-18T03:02:19.743+0000] {drought_data_collector.py:148} INFO -   Fetching Arkansas...
+[2025-10-18T03:02:20.677+0000] {drought_data_collector.py:122} ERROR -   ❌ Arkansas: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:20.681+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Arkansas: No data
+[2025-10-18T03:02:20.683+0000] {drought_data_collector.py:148} INFO -   Fetching California...
+[2025-10-18T03:02:21.606+0000] {drought_data_collector.py:122} ERROR -   ❌ California: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:21.610+0000] {drought_data_collector.py:158} WARNING -     ⚠️ California: No data
+[2025-10-18T03:02:21.611+0000] {drought_data_collector.py:148} INFO -   Fetching Colorado...
+[2025-10-18T03:02:22.594+0000] {drought_data_collector.py:122} ERROR -   ❌ Colorado: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:22.598+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Colorado: No data
+[2025-10-18T03:02:22.600+0000] {drought_data_collector.py:148} INFO -   Fetching Connecticut...
+[2025-10-18T03:02:23.497+0000] {drought_data_collector.py:122} ERROR -   ❌ Connecticut: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:23.499+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Connecticut: No data
+[2025-10-18T03:02:23.500+0000] {drought_data_collector.py:148} INFO -   Fetching Delaware...
+[2025-10-18T03:02:24.442+0000] {drought_data_collector.py:122} ERROR -   ❌ Delaware: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:24.445+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Delaware: No data
+[2025-10-18T03:02:24.446+0000] {drought_data_collector.py:148} INFO -   Fetching Florida...
+[2025-10-18T03:02:25.380+0000] {drought_data_collector.py:122} ERROR -   ❌ Florida: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:25.381+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Florida: No data
+[2025-10-18T03:02:25.381+0000] {drought_data_collector.py:148} INFO -   Fetching Georgia...
+[2025-10-18T03:02:26.284+0000] {drought_data_collector.py:122} ERROR -   ❌ Georgia: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:26.285+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Georgia: No data
+[2025-10-18T03:02:26.285+0000] {drought_data_collector.py:148} INFO -   Fetching Hawaii...
+[2025-10-18T03:02:27.311+0000] {drought_data_collector.py:122} ERROR -   ❌ Hawaii: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:27.312+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Hawaii: No data
+[2025-10-18T03:02:27.313+0000] {drought_data_collector.py:148} INFO -   Fetching Idaho...
+[2025-10-18T03:02:28.191+0000] {drought_data_collector.py:122} ERROR -   ❌ Idaho: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:28.194+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Idaho: No data
+[2025-10-18T03:02:28.195+0000] {drought_data_collector.py:148} INFO -   Fetching Illinois...
+[2025-10-18T03:02:29.155+0000] {drought_data_collector.py:122} ERROR -   ❌ Illinois: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:29.158+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Illinois: No data
+[2025-10-18T03:02:29.159+0000] {drought_data_collector.py:148} INFO -   Fetching Indiana...
+[2025-10-18T03:02:30.091+0000] {drought_data_collector.py:122} ERROR -   ❌ Indiana: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:30.093+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Indiana: No data
+[2025-10-18T03:02:30.094+0000] {drought_data_collector.py:148} INFO -   Fetching Iowa...
+[2025-10-18T03:02:30.980+0000] {drought_data_collector.py:122} ERROR -   ❌ Iowa: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:30.984+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Iowa: No data
+[2025-10-18T03:02:30.984+0000] {drought_data_collector.py:148} INFO -   Fetching Kansas...
+[2025-10-18T03:02:31.864+0000] {drought_data_collector.py:122} ERROR -   ❌ Kansas: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:31.865+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Kansas: No data
+[2025-10-18T03:02:31.865+0000] {drought_data_collector.py:148} INFO -   Fetching Kentucky...
+[2025-10-18T03:02:32.834+0000] {drought_data_collector.py:122} ERROR -   ❌ Kentucky: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:32.837+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Kentucky: No data
+[2025-10-18T03:02:32.838+0000] {drought_data_collector.py:148} INFO -   Fetching Louisiana...
+[2025-10-18T03:02:33.758+0000] {drought_data_collector.py:122} ERROR -   ❌ Louisiana: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:33.762+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Louisiana: No data
+[2025-10-18T03:02:33.763+0000] {drought_data_collector.py:148} INFO -   Fetching Maine...
+[2025-10-18T03:02:34.899+0000] {drought_data_collector.py:122} ERROR -   ❌ Maine: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:34.902+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Maine: No data
+[2025-10-18T03:02:34.903+0000] {drought_data_collector.py:148} INFO -   Fetching Maryland...
+[2025-10-18T03:02:35.952+0000] {drought_data_collector.py:122} ERROR -   ❌ Maryland: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:35.955+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Maryland: No data
+[2025-10-18T03:02:35.956+0000] {drought_data_collector.py:148} INFO -   Fetching Massachusetts...
+[2025-10-18T03:02:36.905+0000] {drought_data_collector.py:122} ERROR -   ❌ Massachusetts: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:36.909+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Massachusetts: No data
+[2025-10-18T03:02:36.910+0000] {drought_data_collector.py:148} INFO -   Fetching Michigan...
+[2025-10-18T03:02:37.804+0000] {drought_data_collector.py:122} ERROR -   ❌ Michigan: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:37.807+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Michigan: No data
+[2025-10-18T03:02:37.807+0000] {drought_data_collector.py:148} INFO -   Fetching Minnesota...
+[2025-10-18T03:02:38.698+0000] {drought_data_collector.py:122} ERROR -   ❌ Minnesota: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:38.702+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Minnesota: No data
+[2025-10-18T03:02:38.704+0000] {drought_data_collector.py:148} INFO -   Fetching Mississippi...
+[2025-10-18T03:02:39.774+0000] {drought_data_collector.py:122} ERROR -   ❌ Mississippi: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:39.777+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Mississippi: No data
+[2025-10-18T03:02:39.777+0000] {drought_data_collector.py:148} INFO -   Fetching Missouri...
+[2025-10-18T03:02:40.703+0000] {drought_data_collector.py:122} ERROR -   ❌ Missouri: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:40.706+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Missouri: No data
+[2025-10-18T03:02:40.707+0000] {drought_data_collector.py:148} INFO -   Fetching Montana...
+[2025-10-18T03:02:41.631+0000] {drought_data_collector.py:122} ERROR -   ❌ Montana: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:41.634+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Montana: No data
+[2025-10-18T03:02:41.635+0000] {drought_data_collector.py:148} INFO -   Fetching Nebraska...
+[2025-10-18T03:02:42.516+0000] {drought_data_collector.py:122} ERROR -   ❌ Nebraska: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:42.519+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Nebraska: No data
+[2025-10-18T03:02:42.520+0000] {drought_data_collector.py:148} INFO -   Fetching Nevada...
+[2025-10-18T03:02:43.417+0000] {drought_data_collector.py:122} ERROR -   ❌ Nevada: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:43.418+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Nevada: No data
+[2025-10-18T03:02:43.418+0000] {drought_data_collector.py:148} INFO -   Fetching New Hampshire...
+[2025-10-18T03:02:44.364+0000] {drought_data_collector.py:122} ERROR -   ❌ New Hampshire: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:44.368+0000] {drought_data_collector.py:158} WARNING -     ⚠️ New Hampshire: No data
+[2025-10-18T03:02:44.369+0000] {drought_data_collector.py:148} INFO -   Fetching New Jersey...
+[2025-10-18T03:02:45.310+0000] {drought_data_collector.py:122} ERROR -   ❌ New Jersey: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:45.315+0000] {drought_data_collector.py:158} WARNING -     ⚠️ New Jersey: No data
+[2025-10-18T03:02:45.316+0000] {drought_data_collector.py:148} INFO -   Fetching New Mexico...
+[2025-10-18T03:02:46.274+0000] {drought_data_collector.py:122} ERROR -   ❌ New Mexico: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:46.275+0000] {drought_data_collector.py:158} WARNING -     ⚠️ New Mexico: No data
+[2025-10-18T03:02:46.275+0000] {drought_data_collector.py:148} INFO -   Fetching New York...
+[2025-10-18T03:02:47.274+0000] {drought_data_collector.py:122} ERROR -   ❌ New York: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:47.278+0000] {drought_data_collector.py:158} WARNING -     ⚠️ New York: No data
+[2025-10-18T03:02:47.279+0000] {drought_data_collector.py:148} INFO -   Fetching North Carolina...
+[2025-10-18T03:02:48.386+0000] {drought_data_collector.py:122} ERROR -   ❌ North Carolina: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:48.390+0000] {drought_data_collector.py:158} WARNING -     ⚠️ North Carolina: No data
+[2025-10-18T03:02:48.392+0000] {drought_data_collector.py:148} INFO -   Fetching North Dakota...
+[2025-10-18T03:02:49.434+0000] {drought_data_collector.py:122} ERROR -   ❌ North Dakota: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:49.438+0000] {drought_data_collector.py:158} WARNING -     ⚠️ North Dakota: No data
+[2025-10-18T03:02:49.439+0000] {drought_data_collector.py:148} INFO -   Fetching Ohio...
+[2025-10-18T03:02:50.553+0000] {drought_data_collector.py:122} ERROR -   ❌ Ohio: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:50.557+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Ohio: No data
+[2025-10-18T03:02:50.559+0000] {drought_data_collector.py:148} INFO -   Fetching Oklahoma...
+[2025-10-18T03:02:51.760+0000] {drought_data_collector.py:122} ERROR -   ❌ Oklahoma: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:51.764+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Oklahoma: No data
+[2025-10-18T03:02:51.766+0000] {drought_data_collector.py:148} INFO -   Fetching Oregon...
+[2025-10-18T03:02:52.797+0000] {drought_data_collector.py:122} ERROR -   ❌ Oregon: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:52.802+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Oregon: No data
+[2025-10-18T03:02:52.803+0000] {drought_data_collector.py:148} INFO -   Fetching Pennsylvania...
+[2025-10-18T03:02:53.843+0000] {drought_data_collector.py:122} ERROR -   ❌ Pennsylvania: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:53.846+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Pennsylvania: No data
+[2025-10-18T03:02:53.848+0000] {drought_data_collector.py:148} INFO -   Fetching Rhode Island...
+[2025-10-18T03:02:54.888+0000] {drought_data_collector.py:122} ERROR -   ❌ Rhode Island: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:54.892+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Rhode Island: No data
+[2025-10-18T03:02:54.894+0000] {drought_data_collector.py:148} INFO -   Fetching South Carolina...
+[2025-10-18T03:02:55.930+0000] {drought_data_collector.py:122} ERROR -   ❌ South Carolina: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:55.935+0000] {drought_data_collector.py:158} WARNING -     ⚠️ South Carolina: No data
+[2025-10-18T03:02:55.937+0000] {drought_data_collector.py:148} INFO -   Fetching South Dakota...
+[2025-10-18T03:02:56.978+0000] {drought_data_collector.py:122} ERROR -   ❌ South Dakota: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:56.983+0000] {drought_data_collector.py:158} WARNING -     ⚠️ South Dakota: No data
+[2025-10-18T03:02:56.985+0000] {drought_data_collector.py:148} INFO -   Fetching Tennessee...
+[2025-10-18T03:02:58.038+0000] {drought_data_collector.py:122} ERROR -   ❌ Tennessee: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:58.043+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Tennessee: No data
+[2025-10-18T03:02:58.045+0000] {drought_data_collector.py:148} INFO -   Fetching Texas...
+[2025-10-18T03:02:59.177+0000] {drought_data_collector.py:122} ERROR -   ❌ Texas: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:02:59.178+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Texas: No data
+[2025-10-18T03:02:59.178+0000] {drought_data_collector.py:148} INFO -   Fetching Utah...
+[2025-10-18T03:03:00.403+0000] {drought_data_collector.py:122} ERROR -   ❌ Utah: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:00.406+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Utah: No data
+[2025-10-18T03:03:00.407+0000] {drought_data_collector.py:148} INFO -   Fetching Vermont...
+[2025-10-18T03:03:01.422+0000] {drought_data_collector.py:122} ERROR -   ❌ Vermont: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:01.427+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Vermont: No data
+[2025-10-18T03:03:01.428+0000] {drought_data_collector.py:148} INFO -   Fetching Virginia...
+[2025-10-18T03:03:02.435+0000] {drought_data_collector.py:122} ERROR -   ❌ Virginia: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:02.436+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Virginia: No data
+[2025-10-18T03:03:02.436+0000] {drought_data_collector.py:148} INFO -   Fetching Washington...
+[2025-10-18T03:03:03.306+0000] {drought_data_collector.py:122} ERROR -   ❌ Washington: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:03.310+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Washington: No data
+[2025-10-18T03:03:03.311+0000] {drought_data_collector.py:148} INFO -   Fetching West Virginia...
+[2025-10-18T03:03:04.192+0000] {drought_data_collector.py:122} ERROR -   ❌ West Virginia: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:04.193+0000] {drought_data_collector.py:158} WARNING -     ⚠️ West Virginia: No data
+[2025-10-18T03:03:04.194+0000] {drought_data_collector.py:148} INFO -   Fetching Wisconsin...
+[2025-10-18T03:03:05.085+0000] {drought_data_collector.py:122} ERROR -   ❌ Wisconsin: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:05.087+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Wisconsin: No data
+[2025-10-18T03:03:05.089+0000] {drought_data_collector.py:148} INFO -   Fetching Wyoming...
+[2025-10-18T03:03:06.106+0000] {drought_data_collector.py:122} ERROR -   ❌ Wyoming: Expecting value: line 1 column 1 (char 0)
+[2025-10-18T03:03:06.107+0000] {drought_data_collector.py:158} WARNING -     ⚠️ Wyoming: No data
+[2025-10-18T03:03:06.108+0000] {drought_data_collector.py:217} ERROR - ❌ No drought data collected
+[2025-10-18T03:03:06.118+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/agricultural_sri_pipeline.py", line 158, in fetch_drought_data
+    context['ti'].xcom_push(key='drought_states', value=result['states'])
+KeyError: 'states'
+[2025-10-18T03:03:06.124+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=agricultural_sri_annual_report, task_id=data_collection.fetch_drought, execution_date=20251018T023124, start_date=20251018T030216, end_date=20251018T030306
+[2025-10-18T03:03:06.130+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 8 for task data_collection.fetch_drought ('states'; 709)
+[2025-10-18T03:03:06.166+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-10-18T03:03:06.182+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

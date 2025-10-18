@@ -1,0 +1,11 @@
+year,state_name,commodity,SRI,risk_category,yield_per_acre,recommendation,yield_risk,weather_risk,drought_risk,economic_risk
+2025,COLORADO - SUMMARY,ALL,34.042766697598786,Avg: 34.0,,,,,,
+2025,COLORADO,CORN,37.7898890799782,Moderate,118.0,"Monitor closely, consider +5% stockpile",90.11396879993772,4.0,0.0,35.0
+2025,COLORADO,CORN,35.84070500169797,Moderate,126.0,"Monitor closely, consider +5% stockpile",84.54487143342277,4.0,0.0,35.0
+2025,COLORADO,CORN,35.84070500169797,Moderate,126.0,"Monitor closely, consider +5% stockpile",84.54487143342277,4.0,0.0,35.0
+2025,COLORADO,WHEAT,33.301606028777044,Moderate,37.0,"Monitor closely, consider +5% stockpile",77.29030293936297,4.0,0.0,35.0
+2025,COLORADO,WHEAT,32.97982436459401,Moderate,38.0,"Monitor closely, consider +5% stockpile",76.3709267559829,4.0,0.0,35.0
+2025,COLORADO,WHEAT,32.97982436459401,Moderate,38.0,"Monitor closely, consider +5% stockpile",76.3709267559829,4.0,0.0,35.0
+2025,COLORADO,WHEAT,32.97982436459401,Moderate,38.0,"Monitor closely, consider +5% stockpile",76.3709267559829,4.0,0.0,35.0
+2025,COLORADO,WHEAT,32.336261036227945,Moderate,40.0,"Monitor closely, consider +5% stockpile",74.5321743892227,4.0,0.0,35.0
+2025,COLORADO,WHEAT,32.336261036227945,Moderate,40.0,"Monitor closely, consider +5% stockpile",74.5321743892227,4.0,0.0,35.0

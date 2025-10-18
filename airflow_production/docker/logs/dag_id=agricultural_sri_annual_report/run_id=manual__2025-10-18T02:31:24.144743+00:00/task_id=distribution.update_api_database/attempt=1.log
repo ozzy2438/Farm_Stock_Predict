@@ -1,0 +1,22 @@
+[2025-10-18T04:30:35.619+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:30:35.626+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:30:35.627+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T04:30:35.633+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): distribution.update_api_database> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T04:30:35.635+0000] {standard_task_runner.py:57} INFO - Started process 1171 to run task
+[2025-10-18T04:30:35.637+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'distribution.update_api_database', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmpieeueha7']
+[2025-10-18T04:30:35.637+0000] {standard_task_runner.py:85} INFO - Job 41: Subtask distribution.update_api_database
+[2025-10-18T04:30:35.656+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.distribution.update_api_database manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T04:30:35.681+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='distribution.update_api_database' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T04:30:35.870+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/agricultural_sri_pipeline.py", line 556, in update_api_database
+    from api_updater import update_sri_database
+ImportError: cannot import name 'update_sri_database' from 'api_updater' (/opt/airflow/dags/scripts/reporters/api_updater.py)
+[2025-10-18T04:30:35.876+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=agricultural_sri_annual_report, task_id=distribution.update_api_database, execution_date=20251018T023124, start_date=20251018T043035, end_date=20251018T043035
+[2025-10-18T04:30:35.880+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 41 for task distribution.update_api_database (cannot import name 'update_sri_database' from 'api_updater' (/opt/airflow/dags/scripts/reporters/api_updater.py); 1171)
+[2025-10-18T04:30:35.897+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-10-18T04:30:35.907+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

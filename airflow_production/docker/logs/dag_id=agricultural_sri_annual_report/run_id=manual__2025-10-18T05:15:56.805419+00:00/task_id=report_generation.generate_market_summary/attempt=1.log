@@ -1,0 +1,24 @@
+[2025-10-18T05:30:46.117+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.report_generation.generate_market_summary manual__2025-10-18T05:15:56.805419+00:00 [queued]>
+[2025-10-18T05:30:46.123+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.report_generation.generate_market_summary manual__2025-10-18T05:15:56.805419+00:00 [queued]>
+[2025-10-18T05:30:46.126+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T05:30:46.132+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): report_generation.generate_market_summary> on 2025-10-18 05:15:56.805419+00:00
+[2025-10-18T05:30:46.135+0000] {standard_task_runner.py:57} INFO - Started process 799 to run task
+[2025-10-18T05:30:46.137+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'report_generation.generate_market_summary', 'manual__2025-10-18T05:15:56.805419+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmptjmwcxt8']
+[2025-10-18T05:30:46.138+0000] {standard_task_runner.py:85} INFO - Job 107: Subtask report_generation.generate_market_summary
+[2025-10-18T05:30:46.159+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.report_generation.generate_market_summary manual__2025-10-18T05:15:56.805419+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T05:30:46.194+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='report_generation.generate_market_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T05:15:56.805419+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T05:15:56.805419+00:00'
+[2025-10-18T05:30:46.425+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T05:30:46.426+0000] {agricultural_sri_pipeline.py:439} INFO - 📄 Generating market summary for 2025
+[2025-10-18T05:30:46.432+0000] {market_report_generator.py:138} INFO - 📄 Generating market summary report...
+[2025-10-18T05:30:46.434+0000] {market_report_generator.py:143} INFO -   Loaded 380 SRI records
+[2025-10-18T05:30:46.435+0000] {market_report_generator.py:147} INFO -   ✓ Executive summary generated
+[2025-10-18T05:30:46.438+0000] {market_report_generator.py:150} INFO -   ✓ Top risk states identified
+[2025-10-18T05:30:46.440+0000] {market_report_generator.py:153} INFO -   ✓ Commodity breakdown calculated
+[2025-10-18T05:30:46.442+0000] {market_report_generator.py:187} INFO - ✅ Market report saved to: /opt/***/data/reports/2025/market_summary_2025.html
+[2025-10-18T05:30:46.453+0000] {agricultural_sri_pipeline.py:455} INFO - ✅ Market summary report generated
+[2025-10-18T05:30:46.453+0000] {python.py:194} INFO - Done. Returned value was: {'success': True, 'file_path': '/opt/***/data/reports/2025/market_summary_2025.html', 'stats': {'year': 2025, 'national_avg_sri': 23.749738036688626, 'high_risk_states': 0, 'critical_alerts': 0}}
+[2025-10-18T05:30:46.462+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=report_generation.generate_market_summary, execution_date=20251018T051556, start_date=20251018T053046, end_date=20251018T053046
+[2025-10-18T05:30:46.493+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T05:30:46.506+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

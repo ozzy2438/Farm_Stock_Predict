@@ -1,0 +1,28 @@
+[2025-10-18T05:28:29.730+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_processing.validate_data_quality manual__2025-10-18T04:58:42.887469+00:00 [queued]>
+[2025-10-18T05:28:29.751+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_processing.validate_data_quality manual__2025-10-18T04:58:42.887469+00:00 [queued]>
+[2025-10-18T05:28:29.752+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T05:28:29.785+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): data_processing.validate_data_quality> on 2025-10-18 04:58:42.887469+00:00
+[2025-10-18T05:28:29.794+0000] {standard_task_runner.py:57} INFO - Started process 577 to run task
+[2025-10-18T05:28:29.810+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'data_processing.validate_data_quality', 'manual__2025-10-18T04:58:42.887469+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmpy_hn1u_a']
+[2025-10-18T05:28:29.812+0000] {standard_task_runner.py:85} INFO - Job 64: Subtask data_processing.validate_data_quality
+[2025-10-18T05:28:29.858+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.data_processing.validate_data_quality manual__2025-10-18T04:58:42.887469+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T05:28:29.908+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='data_processing.validate_data_quality' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T04:58:42.887469+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T04:58:42.887469+00:00'
+[2025-10-18T05:28:30.137+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T05:28:30.138+0000] {agricultural_sri_pipeline.py:221} INFO - 🔍 Validating data quality for 2025
+[2025-10-18T05:28:30.152+0000] {data_validator.py:335} INFO - 🔍 Validating all datasets...
+[2025-10-18T05:28:30.152+0000] {data_validator.py:32} INFO -   Validating crop yield data...
+[2025-10-18T05:28:30.155+0000] {data_validator.py:108} INFO -     ✓ Crop data valid: 380 records, 39 states
+[2025-10-18T05:28:30.155+0000] {data_validator.py:129} INFO -   Validating weather data...
+[2025-10-18T05:28:30.157+0000] {data_validator.py:184} INFO -     ✓ Weather data valid: 50 records, 50 states
+[2025-10-18T05:28:30.157+0000] {data_validator.py:205} INFO -   Validating drought data...
+[2025-10-18T05:28:30.158+0000] {data_validator.py:251} INFO -     ✓ Drought data valid: 50 records, 50 states
+[2025-10-18T05:28:30.158+0000] {data_validator.py:272} INFO -   Validating economic data...
+[2025-10-18T05:28:30.159+0000] {data_validator.py:311} INFO -     ✓ Economic data valid: 3 records, 3 commodities
+[2025-10-18T05:28:30.159+0000] {data_validator.py:365} INFO - ✅ All datasets valid (1 warnings)
+[2025-10-18T05:28:30.159+0000] {agricultural_sri_pipeline.py:244} INFO - ✅ Data validation passed (1 warnings)
+[2025-10-18T05:28:30.165+0000] {python.py:194} INFO - Done. Returned value was: {'overall_passed': True, 'datasets': {'crop': {'dataset': 'crop_yield', 'passed': True, 'errors': [], 'warnings': ['Low state coverage: 39 states (expected ~50)'], 'stats': {'total_records': 380, 'states': 39, 'commodities': 3, 'min_yield': 21.0, 'max_yield': 235.0, 'mean_yield': 89.04131578947367}}, 'weather': {'dataset': 'weather', 'passed': True, 'errors': [], 'warnings': [], 'stats': {'total_records': 50, 'states': 50, 'avg_temp_mean': 68.0, 'avg_precip_mean': 25.0}}, 'drought': {'dataset': 'drought', 'passed': True, 'errors': [], 'warnings': [], 'stats': {'total_records': 50, 'states': 50, 'avg_dsci_mean': 100.0}}, 'economic': {'dataset': 'economic', 'passed': True, 'errors': [], 'warnings': [], 'stats': {'total_records': 3, 'commodities': 3}}}, 'total_errors': 0, 'total_warnings': 1}
+[2025-10-18T05:28:30.173+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=data_processing.validate_data_quality, execution_date=20251018T045842, start_date=20251018T052829, end_date=20251018T052830
+[2025-10-18T05:28:30.200+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T05:28:30.214+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

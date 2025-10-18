@@ -1,0 +1,64 @@
+# ==============================================================================
+# Agricultural SRI Pipeline - Python Dependencies
+# ==============================================================================
+
+# Airflow Core
+apache-airflow==2.7.3
+apache-airflow-providers-celery==3.4.0
+apache-airflow-providers-postgres==5.7.1
+apache-airflow-providers-redis==3.4.0
+apache-airflow-providers-amazon==8.9.0
+apache-airflow-providers-http==4.7.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.23.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# API & Web
+requests>=2.28.0
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.4.0
+
+# Database
+psycopg2-binary>=2.9.9
+SQLAlchemy>=2.0.0
+
+# AWS Integration
+boto3>=1.28.0
+botocore>=1.31.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Report Generation
+jinja2>=3.1.2
+weasyprint>=60.0  # HTML to PDF conversion
+reportlab>=4.0.0  # PDF generation
+
+# Email & Notifications
+sendgrid>=6.10.0  # Optional: SendGrid for email
+python-dotenv>=1.0.0
+
+# Utilities
+pytz>=2023.3
+pendulum>=2.1.2
+python-dateutil>=2.8.2
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Linting & Code Quality (optional)
+black>=23.10.0
+flake8>=6.1.0
+mypy>=1.6.0
+
+# Monitoring (optional)
+prometheus-client>=0.18.0
+statsd>=4.0.1

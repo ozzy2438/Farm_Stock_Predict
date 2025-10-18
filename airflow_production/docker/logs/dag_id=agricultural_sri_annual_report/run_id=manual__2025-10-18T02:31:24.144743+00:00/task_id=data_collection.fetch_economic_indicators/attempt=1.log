@@ -1,0 +1,31 @@
+[2025-10-18T02:31:27.379+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_economic_indicators manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T02:31:27.387+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.data_collection.fetch_economic_indicators manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T02:31:27.387+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2025-10-18T02:31:27.396+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): data_collection.fetch_economic_indicators> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T02:31:27.399+0000] {standard_task_runner.py:57} INFO - Started process 278 to run task
+[2025-10-18T02:31:27.402+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'data_collection.fetch_economic_indicators', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmphn_1dcbo']
+[2025-10-18T02:31:27.403+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask data_collection.fetch_economic_indicators
+[2025-10-18T02:31:27.427+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.data_collection.fetch_economic_indicators manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T02:31:27.465+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='data_collection.fetch_economic_indicators' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T02:31:28.186+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T02:31:28.186+0000] {agricultural_sri_pipeline.py:171} INFO - 💰 Fetching economic data for 2025
+[2025-10-18T02:31:28.187+0000] {economic_data_collector.py:124} INFO - 💰 Fetching economic data for 2025
+[2025-10-18T02:31:28.187+0000] {economic_data_collector.py:135} INFO -   Fetching CORN PSD data...
+[2025-10-18T02:31:29.808+0000] {economic_data_collector.py:79} ERROR -   ❌ CORN: HTTP 404
+[2025-10-18T02:31:29.814+0000] {economic_data_collector.py:145} WARNING -     ⚠️ CORN: No data
+[2025-10-18T02:31:29.815+0000] {economic_data_collector.py:135} INFO -   Fetching SOYBEANS PSD data...
+[2025-10-18T02:31:30.860+0000] {economic_data_collector.py:79} ERROR -   ❌ SOYBEANS: HTTP 404
+[2025-10-18T02:31:30.865+0000] {economic_data_collector.py:145} WARNING -     ⚠️ SOYBEANS: No data
+[2025-10-18T02:31:30.866+0000] {economic_data_collector.py:135} INFO -   Fetching WHEAT PSD data...
+[2025-10-18T02:31:31.903+0000] {economic_data_collector.py:79} ERROR -   ❌ WHEAT: HTTP 404
+[2025-10-18T02:31:31.908+0000] {economic_data_collector.py:145} WARNING -     ⚠️ WHEAT: No data
+[2025-10-18T02:31:31.909+0000] {economic_data_collector.py:149} WARNING -   PSD API data unavailable, creating fallback economic indicators
+[2025-10-18T02:31:31.910+0000] {economic_data_collector.py:108} INFO -   Using baseline price indices (production would fetch actual prices)
+[2025-10-18T02:31:31.918+0000] {economic_data_collector.py:214} INFO - ✅ Saved 3 commodity records to /opt/***/data/raw/2025/economic_2025.csv
+[2025-10-18T02:31:31.929+0000] {agricultural_sri_pipeline.py:180} INFO - ✅ Fetched economic indicators
+[2025-10-18T02:31:31.929+0000] {python.py:194} INFO - Done. Returned value was: {'success': True, 'file_path': '/opt/***/data/raw/2025/economic_2025.csv', 'records': 3, 'stats': {'year': 2025, 'commodities': {'CORN': 1, 'SOYBEANS': 1, 'WHEAT': 1}, 'total_records': 3}}
+[2025-10-18T02:31:31.942+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=data_collection.fetch_economic_indicators, execution_date=20251018T023124, start_date=20251018T023127, end_date=20251018T023131
+[2025-10-18T02:31:31.979+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T02:31:31.996+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

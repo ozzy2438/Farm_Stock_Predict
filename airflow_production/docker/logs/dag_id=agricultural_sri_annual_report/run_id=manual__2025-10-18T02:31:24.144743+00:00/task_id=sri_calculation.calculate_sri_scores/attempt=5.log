@@ -1,0 +1,30 @@
+[2025-10-18T04:22:28.364+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.sri_calculation.calculate_sri_scores manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:22:28.369+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: agricultural_sri_annual_report.sri_calculation.calculate_sri_scores manual__2025-10-18T02:31:24.144743+00:00 [queued]>
+[2025-10-18T04:22:28.369+0000] {taskinstance.py:1361} INFO - Starting attempt 5 of 7
+[2025-10-18T04:22:28.374+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): sri_calculation.calculate_sri_scores> on 2025-10-18 02:31:24.144743+00:00
+[2025-10-18T04:22:28.376+0000] {standard_task_runner.py:57} INFO - Started process 964 to run task
+[2025-10-18T04:22:28.378+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'agricultural_sri_annual_report', 'sri_calculation.calculate_sri_scores', 'manual__2025-10-18T02:31:24.144743+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/agricultural_sri_pipeline.py', '--cfg-path', '/tmp/tmphgw06os6']
+[2025-10-18T04:22:28.379+0000] {standard_task_runner.py:85} INFO - Job 29: Subtask sri_calculation.calculate_sri_scores
+[2025-10-18T04:22:28.400+0000] {task_command.py:416} INFO - Running <TaskInstance: agricultural_sri_annual_report.sri_calculation.calculate_sri_scores manual__2025-10-18T02:31:24.144743+00:00 [running]> on host 4e2b74bc69c8
+[2025-10-18T04:22:28.430+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='alerts@agcompany.com' AIRFLOW_CTX_DAG_OWNER='agricultural_risk_team' AIRFLOW_CTX_DAG_ID='agricultural_sri_annual_report' AIRFLOW_CTX_TASK_ID='sri_calculation.calculate_sri_scores' AIRFLOW_CTX_EXECUTION_DATE='2025-10-18T02:31:24.144743+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-10-18T02:31:24.144743+00:00'
+[2025-10-18T04:22:28.843+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:314: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(k, replacements))
+
+[2025-10-18T04:22:28.844+0000] {agricultural_sri_pipeline.py:308} INFO - 📊 Calculating SRI scores for 2025
+[2025-10-18T04:22:28.848+0000] {sri_calculator.py:149} INFO - 📊 Calculating Stock Risk Index (SRI)...
+[2025-10-18T04:22:28.850+0000] {sri_calculator.py:154} INFO -   Loaded 380 records
+[2025-10-18T04:22:28.851+0000] {sri_calculator.py:157} INFO -   Calculating risk components...
+[2025-10-18T04:22:28.851+0000] {sri_calculator.py:160} INFO -     ✓ Yield risk calculated
+[2025-10-18T04:22:28.852+0000] {sri_calculator.py:163} INFO -     ✓ Weather risk calculated
+[2025-10-18T04:22:28.853+0000] {sri_calculator.py:166} INFO -     ✓ Drought risk calculated
+[2025-10-18T04:22:28.853+0000] {sri_calculator.py:169} INFO -     ✓ Economic risk calculated
+[2025-10-18T04:22:28.853+0000] {sri_calculator.py:172} INFO -   Calculating SRI...
+[2025-10-18T04:22:28.860+0000] {sri_calculator.py:264} INFO - ✅ SRI calculated for 380 records
+[2025-10-18T04:22:28.860+0000] {sri_calculator.py:265} INFO -    Average SRI: 23.7
+[2025-10-18T04:22:28.860+0000] {sri_calculator.py:266} INFO -    High-risk records: 0
+[2025-10-18T04:22:28.860+0000] {sri_calculator.py:267} INFO -    Results saved to: /opt/***/data/results/2025/sri_results_2025.csv
+[2025-10-18T04:22:28.880+0000] {agricultural_sri_pipeline.py:335} INFO - ✅ Calculated SRI scores - Avg: 23.7, High-risk states: 0
+[2025-10-18T04:22:28.880+0000] {python.py:194} INFO - Done. Returned value was: {'success': True, 'file_path': '/opt/***/data/results/2025/sri_results_2025.csv', 'records': 380, 'stats': {'year': 2025, 'total_records': 380, 'avg_sri': 23.749738036688626, 'median_sri': 22.927360483091405, 'min_sri': 6.25, 'max_sri': 41.25, 'risk_distribution': {'low': 227, 'moderate': 153, 'high': 0, 'very_high': 0}, 'high_risk_states': 0, 'component_averages': {'yield_risk': 49.99925153339607, 'weather_risk': 4.0, 'drought_risk': 0.0, 'economic_risk': 35.0}}}
+[2025-10-18T04:22:28.887+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=agricultural_sri_annual_report, task_id=sri_calculation.calculate_sri_scores, execution_date=20251018T023124, start_date=20251018T042228, end_date=20251018T042228
+[2025-10-18T04:22:28.900+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-10-18T04:22:28.913+0000] {taskinstance.py:2778} INFO - 2 downstream tasks scheduled from follow-on schedule check

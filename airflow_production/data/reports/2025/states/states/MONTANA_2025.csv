@@ -1,0 +1,14 @@
+year,state_name,commodity,SRI,risk_category,yield_per_acre,recommendation,yield_risk,weather_risk,drought_risk,economic_risk
+2025,MONTANA - SUMMARY,ALL,33.974666009693216,Avg: 34.0,,,,,,
+2025,MONTANA,WHEAT,38.45011265570556,Moderate,21.0,"Monitor closely, consider +5% stockpile",92.00032187344446,4.0,0.0,35.0
+2025,MONTANA,WHEAT,37.48476766315646,Moderate,24.0,"Monitor closely, consider +5% stockpile",89.24219332330418,4.0,0.0,35.0
+2025,MONTANA,WHEAT,37.16298599897343,Moderate,25.0,"Monitor closely, consider +5% stockpile",88.3228171399241,4.0,0.0,35.0
+2025,MONTANA,WHEAT,36.51942267060737,Moderate,27.0,"Monitor closely, consider +5% stockpile",86.48406477316391,4.0,0.0,35.0
+2025,MONTANA,WHEAT,35.8758593422413,Moderate,29.0,"Monitor closely, consider +5% stockpile",84.64531240640372,4.0,0.0,35.0
+2025,MONTANA,WHEAT,35.55407767805826,Moderate,30.0,"Monitor closely, consider +5% stockpile",83.72593622302362,4.0,0.0,35.0
+2025,MONTANA,WHEAT,33.33378419519535,Moderate,36.9,"Monitor closely, consider +5% stockpile",77.382240557701,4.0,0.0,35.0
+2025,MONTANA,WHEAT,31.04913437949582,Moderate,44.0,"Monitor closely, consider +5% stockpile",70.85466965570234,4.0,0.0,35.0
+2025,MONTANA,WHEAT,31.04913437949582,Moderate,44.0,"Monitor closely, consider +5% stockpile",70.85466965570234,4.0,0.0,35.0
+2025,MONTANA,WHEAT,30.727352715312783,Moderate,45.0,"Monitor closely, consider +5% stockpile",69.93529347232224,4.0,0.0,35.0
+2025,MONTANA,WHEAT,30.40557105112975,Moderate,46.0,"Monitor closely, consider +5% stockpile",69.01591728894215,4.0,0.0,35.0
+2025,MONTANA,WHEAT,30.08378938694672,Moderate,47.0,"Monitor closely, consider +5% stockpile",68.09654110556205,4.0,0.0,35.0
