@@ -341,6 +341,178 @@ chart3 = (boxplot + annotation_highest + annotation_lowest).configure_view(
 )
 
 # ============================================================================
+# CHART 4: Annual SRI Trends (2010-2024) with Critical Events
+# ============================================================================
+
+print("\n📈 Chart 4: Annual trends with critical event annotations...")
+
+# Check if we have year data
+if 'year' in df.columns:
+    # Calculate annual average SRI by commodity
+    annual_data = df.groupby(['year', 'commodity']).agg({
+        'SRI': 'mean'
+    }).reset_index()
+
+    # Also calculate overall average
+    annual_overall = df.groupby('year').agg({
+        'SRI': 'mean'
+    }).reset_index()
+    annual_overall['commodity'] = 'Overall Average'
+
+    # Combine
+    annual_combined = pd.concat([annual_data, annual_overall], ignore_index=True)
+
+    # Line chart
+    lines = alt.Chart(annual_combined).mark_line(
+        strokeWidth=4,
+        point=alt.OverlayMarkDef(size=100, filled=True)
+    ).encode(
+        x=alt.X('year:O',
+                title='Year',
+                axis=alt.Axis(labelAngle=0, labelFontSize=18, titleFontSize=22)),
+        y=alt.Y('SRI:Q',
+                title='Average Stock Risk Index',
+                scale=alt.Scale(domain=[0, 100]),
+                axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
+        color=alt.Color('commodity:N',
+                        title='Commodity',
+                        scale=alt.Scale(scheme='category10'),
+                        legend=alt.Legend(titleFontSize=16, labelFontSize=14)),
+        tooltip=[
+            alt.Tooltip('year:O', title='Year'),
+            alt.Tooltip('commodity:N', title='Commodity'),
+            alt.Tooltip('SRI:Q', title='Avg Risk Index', format='.1f')
+        ]
+    ).properties(
+        width=1800,
+        height=900,
+        title={
+            'text': '📈 ANNUAL RISK TRENDS (2010-2024): Critical Events Impact',
+            'fontSize': 28,
+            'fontWeight': 'bold',
+            'color': '#2c5f2d'
+        }
+    )
+
+    # CRITICAL EVENTS ANNOTATIONS
+
+    # Event 1: 2012 Drought
+    event_2012_line = alt.Chart(pd.DataFrame([{'year': '2012'}])).mark_rule(
+        strokeWidth=3,
+        strokeDash=[8, 4],
+        color='#d32f2f',
+        opacity=0.8
+    ).encode(x='year:O')
+
+    event_2012_text = alt.Chart(pd.DataFrame([{
+        'year': '2012',
+        'y': 85,
+        'text': '🔥 2012 DROUGHT\n▼ Historic drought impact\nSRI spike observed'
+    }])).mark_text(
+        fontSize=15,
+        fontWeight='bold',
+        color='#d32f2f',
+        align='center',
+        dy=-20
+    ).encode(
+        x='year:O',
+        y='y:Q',
+        text='text:N'
+    )
+
+    # Event 2: 2020 COVID-19
+    event_2020_line = alt.Chart(pd.DataFrame([{'year': '2020'}])).mark_rule(
+        strokeWidth=3,
+        strokeDash=[8, 4],
+        color='#f57c00',
+        opacity=0.8
+    ).encode(x='year:O')
+
+    event_2020_text = alt.Chart(pd.DataFrame([{
+        'year': '2020',
+        'y': 90,
+        'text': '🦠 COVID-19\n▼ Pandemic disruption\nSupply chain stress'
+    }])).mark_text(
+        fontSize=15,
+        fontWeight='bold',
+        color='#f57c00',
+        align='center',
+        dy=-20
+    ).encode(
+        x='year:O',
+        y='y:Q',
+        text='text:N'
+    )
+
+    # Event 3: 2022 Supply Chain Crisis
+    if '2022' in annual_combined['year'].astype(str).values:
+        event_2022_line = alt.Chart(pd.DataFrame([{'year': '2022'}])).mark_rule(
+            strokeWidth=3,
+            strokeDash=[8, 4],
+            color='#fbc02d',
+            opacity=0.8
+        ).encode(x='year:O')
+
+        event_2022_text = alt.Chart(pd.DataFrame([{
+            'year': '2022',
+            'y': 85,
+            'text': '⚠️ SUPPLY CHAIN\n▼ Global disruptions\nProcurement challenges'
+        }])).mark_text(
+            fontSize=15,
+            fontWeight='bold',
+            color='#fbc02d',
+            align='center',
+            dy=-20
+        ).encode(
+            x='year:O',
+            y='y:Q',
+            text='text:N'
+        )
+
+        chart4 = (lines + event_2012_line + event_2012_text +
+                  event_2020_line + event_2020_text +
+                  event_2022_line + event_2022_text)
+    else:
+        chart4 = (lines + event_2012_line + event_2012_text +
+                  event_2020_line + event_2020_text)
+
+    # Threshold line
+    threshold = alt.Chart(pd.DataFrame({'y': [75]})).mark_rule(
+        strokeWidth=2,
+        strokeDash=[10, 5],
+        color='#d32f2f',
+        opacity=0.5
+    ).encode(y='y:Q')
+
+    threshold_label = alt.Chart(pd.DataFrame([{
+        'x': annual_combined['year'].astype(str).max(),
+        'y': 75,
+        'text': '← CRITICAL THRESHOLD'
+    }])).mark_text(
+        fontSize=14,
+        fontWeight='bold',
+        color='#d32f2f',
+        align='right',
+        dx=-10
+    ).encode(
+        x='x:O',
+        y='y:Q',
+        text='text:N'
+    )
+
+    chart4 = (chart4 + threshold + threshold_label).configure_view(
+        strokeWidth=0
+    ).configure_axis(
+        grid=True,
+        gridOpacity=0.3
+    )
+
+    has_chart4 = True
+else:
+    print("  ⚠️ No year data available, skipping trend chart")
+    has_chart4 = False
+
+# ============================================================================
 # Save Charts
 # ============================================================================
 
@@ -354,6 +526,10 @@ print("  ✓ Chart 2: Top States with priority markers")
 
 chart3.save('/Users/osmanorka/Farm_Stock_Predit/annotated_3_commodities.html')
 print("  ✓ Chart 3: Commodity comparison with focus areas")
+
+if has_chart4:
+    chart4.save('/Users/osmanorka/Farm_Stock_Predit/annotated_4_annual_trends.html')
+    print("  ✓ Chart 4: Annual trends with critical events")
 
 print("\n" + "=" * 80)
 print("✅ ANNOTATED DASHBOARDS CREATED!")

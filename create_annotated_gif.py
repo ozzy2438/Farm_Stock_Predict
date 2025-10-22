@@ -35,6 +35,10 @@ dashboards = [
     ('annotated_3_commodities.html',
      '🌾 COMMODITY FOCUS',
      'Highest/lowest risk crops highlighted'),
+
+    ('annotated_4_annual_trends.html',
+     '📈 ANNUAL TRENDS 2010-2024',
+     'Critical events: 2012 Drought, COVID-19, Supply Chain'),
 ]
 
 base_path = '/Users/osmanorka/Farm_Stock_Predit'
