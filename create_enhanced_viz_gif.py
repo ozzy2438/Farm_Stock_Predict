@@ -80,9 +80,9 @@ for i, (filename, title, description) in enumerate(visualizations, 1):
         desc_font = ImageFont.load_default()
         counter_font = ImageFont.load_default()
 
-    # Add semi-transparent top banner (minimal)
-    banner_height = 140
-    overlay = Image.new('RGBA', (img.width, banner_height), (44, 95, 45, 235))
+    # Add semi-transparent top banner (thinner and more transparent)
+    banner_height = 75  # Much thinner (was 140)
+    overlay = Image.new('RGBA', (img.width, banner_height), (44, 95, 45, 150))  # More transparent (was 235)
 
     # Paste overlay on original image
     img_with_overlay = img.copy()
@@ -91,11 +91,11 @@ for i, (filename, title, description) in enumerate(visualizations, 1):
     # Now draw text
     draw = ImageDraw.Draw(img_with_overlay)
 
-    # Title
-    draw.text((25, 25), title, font=title_font, fill=(255, 255, 255))
+    # Title - slightly smaller and adjusted position
+    draw.text((20, 12), title, font=title_font, fill=(255, 255, 255))
 
-    # Description
-    draw.text((25, 85), description, font=desc_font, fill=(200, 255, 200))
+    # Description removed to save space and not cover graphics
+    # draw.text((25, 85), description, font=desc_font, fill=(200, 255, 200))
 
     # Frame counter - bottom right corner
     counter_text = f"{i}/{len(visualizations)}"
