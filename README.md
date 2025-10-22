@@ -8,6 +8,22 @@ A comprehensive U.S. agricultural risk prediction system that combines crop yiel
 
 ---
 
+## 🎬 Interactive Dashboard Preview
+
+![Agricultural Risk Dashboard](agricultural_dashboard_animated.gif)
+
+**[📊 View Full Interactive Dashboards](DASHBOARD_README.md)** | **[🗺️ Geographic Analysis](dashboard_2_states_annotated.html)** | **[📈 Trend Analysis](dashboard_1_trends_annotated.html)**
+
+The system includes 4 fully interactive HTML dashboards with rich annotations:
+- **Trend Analysis**: Historical risk patterns with event markers (2012 drought, COVID-19, etc.)
+- **Geographic Risk**: Top 20 high-risk states with color-coded severity
+- **Commodity Distribution**: Box plots with statistical overlays
+- **Drought Correlation**: Scatter analysis with regression lines
+
+> 💡 **All dashboards are built with Altair/PyNarrative and feature interactive tooltips, zoom, and filtering**
+
+---
+
 ## 📊 Project Overview
 
 The **Farm Stock Prediction System** analyzes 15+ years of agricultural data to predict supply risks for major U.S. crops. It helps policymakers, farmers, and supply chain managers identify high-risk regions and prepare for potential shortages.

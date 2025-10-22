@@ -1,0 +1,124 @@
+# ==============================================================================
+# Farm Stock Prediction - Git Ignore
+# ==============================================================================
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+config/secrets/*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.log
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+mitoenv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Docker
+docker-compose.override.yml
+airflow_production/docker/logs/*
+airflow_production/docker/plugins/*
+
+# Airflow
+airflow_production/dags/__pycache__/
+airflow_production/scripts/__pycache__/
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+standalone_admin_password.txt
+webserver_config.py
+
+# Data Files (large datasets)
+*.csv
+*.xlsx
+*.parquet
+*.feather
+!sri_results_2025.csv
+airflow_production/data/raw/*
+airflow_production/data/processed/*
+!airflow_production/data/.gitkeep
+
+# Generated Reports
+airflow_production/data/reports/*
+visualizations_2025/
+visualizations_2025_enhanced/
+*.html
+!templates/*.html
+*.pdf
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS Files
+Thumbs.db
+desktop.ini
+
+# Temporary Files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# PostgreSQL
+*.sql
+postgres-db-volume/
+
+# AWS
+.aws/
+*.s3cfg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Mac
+.AppleDouble
+.LSOverride
+._*
+
+# Keep these important files
+!README.md
+!requirements.txt
+!docker-compose.yml
+!Dockerfile
+!.env.example
