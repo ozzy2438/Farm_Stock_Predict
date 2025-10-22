@@ -43,10 +43,10 @@ histogram = alt.Chart(hist_data).mark_bar(opacity=0.8).encode(
     x=alt.X('SRI:Q',
             bin=alt.Bin(maxbins=30),
             title='Stock Risk Index (SRI)',
-            axis=alt.Axis(labelFontSize=14, titleFontSize=16)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
     y=alt.Y('count():Q',
             title='Number of State-Commodity Combinations',
-            axis=alt.Axis(labelFontSize=14, titleFontSize=16)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
     color=alt.Color('risk_category:N',
                     scale=alt.Scale(
                         domain=['Low', 'Moderate', 'High', 'Critical'],
@@ -59,11 +59,11 @@ histogram = alt.Chart(hist_data).mark_bar(opacity=0.8).encode(
         alt.Tooltip('risk_category:N', title='Risk Level')
     ]
 ).properties(
-    width=1400,
-    height=500,
+    width=1800,
+    height=900,
     title={
         'text': '📊 RISK DISTRIBUTION: Where Should We Focus?',
-        'fontSize': 24,
+        'fontSize': 28,
         'fontWeight': 'bold',
         'color': '#2c5f2d'
     }
@@ -185,11 +185,11 @@ bars = alt.Chart(top_states).mark_bar().encode(
     y=alt.Y('state_name:N',
             sort='-x',
             title='State',
-            axis=alt.Axis(labelFontSize=13, titleFontSize=16)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
     x=alt.X('SRI:Q',
             title='Average Stock Risk Index',
             scale=alt.Scale(domain=[0, 100]),
-            axis=alt.Axis(labelFontSize=13, titleFontSize=16)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
     color=alt.Color('SRI:Q',
                     scale=alt.Scale(
                         domain=[0, 25, 50, 75, 100],
@@ -202,11 +202,11 @@ bars = alt.Chart(top_states).mark_bar().encode(
         alt.Tooltip('SRI:Q', title='Risk Index', format='.1f')
     ]
 ).properties(
-    width=1400,
-    height=600,
+    width=1800,
+    height=1000,
     title={
         'text': '🗺️ TOP 15 HIGH-RISK STATES: Priority Action Areas',
-        'fontSize': 24,
+        'fontSize': 28,
         'fontWeight': 'bold',
         'color': '#2c5f2d'
     }
@@ -270,21 +270,21 @@ boxplot = alt.Chart(commodity_data).mark_boxplot(
 ).encode(
     x=alt.X('commodity:N',
             title='Commodity Type',
-            axis=alt.Axis(labelFontSize=14, titleFontSize=16, labelAngle=0)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22, labelAngle=0)),
     y=alt.Y('SRI:Q',
             title='Stock Risk Index',
             scale=alt.Scale(domain=[0, 100]),
-            axis=alt.Axis(labelFontSize=14, titleFontSize=16)),
+            axis=alt.Axis(labelFontSize=18, titleFontSize=22)),
     tooltip=[
         alt.Tooltip('commodity:N', title='Commodity'),
         alt.Tooltip('SRI:Q', title='Risk Index')
     ]
 ).properties(
-    width=1400,
-    height=500,
+    width=1800,
+    height=900,
     title={
         'text': '🌾 COMMODITY RISK COMPARISON: Which Crops Need Attention?',
-        'fontSize': 24,
+        'fontSize': 28,
         'fontWeight': 'bold',
         'color': '#2c5f2d'
     }
