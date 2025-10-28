@@ -1,14 +1,14 @@
 """
-Agricultural Stock Risk Index (SRI) Annual Pipeline
+Agricultural Stock Risk Index (SRI) Quarterly Pipeline
 
-This DAG automatically runs every January 1st to:
+This DAG automatically runs quarterly (Jan 1, Apr 1, Jul 1, Oct 1) to:
 1. Collect agricultural data from USDA APIs
 2. Process and merge datasets
 3. Calculate SRI risk scores
 4. Generate market reports
 5. Distribute insights to stakeholders
 
-Schedule: Annual (January 1st, 00:00 UTC)
+Schedule: Quarterly (1st day of Jan/Apr/Jul/Oct at 00:00 UTC)
 Owner: Agricultural Risk Team
 """
 
@@ -42,13 +42,13 @@ default_args = {
 }
 
 dag = DAG(
-    'agricultural_sri_annual_report',
+    'agricultural_sri_quarterly_report',
     default_args=default_args,
-    description='Annual agricultural risk assessment and market reporting pipeline',
-    schedule_interval='0 0 1 1 *',  # January 1st, 00:00 UTC (every year)
+    description='Quarterly agricultural risk assessment and market reporting pipeline',
+    schedule_interval='0 0 1 1,4,7,10 *',  # Quarterly: Jan 1, Apr 1, Jul 1, Oct 1 at 00:00 UTC
     catchup=False,
     max_active_runs=1,
-    tags=['production', 'agriculture', 'risk-assessment', 'annual'],
+    tags=['production', 'agriculture', 'risk-assessment', 'quarterly'],
 )
 
 # =============================================================================
