@@ -74,7 +74,7 @@ airflow_production/data/processed/*
 # Generated Reports
 airflow_production/data/reports/*
 visualizations_2025/
-visualizations_2025_enhanced/
+!visualizations_2025_enhanced/
 *.html
 !templates/*.html
 *.pdf
