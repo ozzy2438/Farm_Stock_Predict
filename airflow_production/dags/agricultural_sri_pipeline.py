@@ -1,14 +1,14 @@
 """
 Agricultural Stock Risk Index (SRI) Annual Pipeline
 
-This DAG automatically runs every October 1st to:
+This DAG automatically runs every January 1st to:
 1. Collect agricultural data from USDA APIs
 2. Process and merge datasets
 3. Calculate SRI risk scores
 4. Generate market reports
 5. Distribute insights to stakeholders
 
-Schedule: Annual (October 1st, 00:00 UTC)
+Schedule: Annual (January 1st, 00:00 UTC)
 Owner: Agricultural Risk Team
 """
 
@@ -31,8 +31,8 @@ logger = logging.getLogger(__name__)
 default_args = {
     'owner': 'agricultural_risk_team',
     'depends_on_past': False,
-    'start_date': datetime(2025, 10, 1),
-    'email': ['alerts@agcompany.com'],
+    'start_date': datetime(2026, 1, 1),  # Start from January 1, 2026
+    'email': ['osmanorka@gmail.com'],  # Your email for reports
     'email_on_failure': True,
     'email_on_retry': False,
     'email_on_success': True,
@@ -45,7 +45,7 @@ dag = DAG(
     'agricultural_sri_annual_report',
     default_args=default_args,
     description='Annual agricultural risk assessment and market reporting pipeline',
-    schedule_interval='0 0 1 10 *',  # October 1st, 00:00 UTC
+    schedule_interval='0 0 1 1 *',  # January 1st, 00:00 UTC (every year)
     catchup=False,
     max_active_runs=1,
     tags=['production', 'agriculture', 'risk-assessment', 'annual'],
